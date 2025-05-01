@@ -1,7 +1,7 @@
 
 //MQTT-välityspalvelimen määrittely
 const mqtt    = require('mqtt');
-const broker = 'mqtt://test.mosquitto.org';
+const broker = 'mqtt://automaatio:Z0od2PZF65jbtcXu@automaatio.cloud.shiftr.io';
 const user = '';
 const pw = ''; 
 
@@ -12,7 +12,7 @@ mq = mqtt.connect(broker, {
 });
 
 //tilataan oikea topic
-mq.subscribe('automaatio/#');
+mq.subscribe('automaatio2/#');
 
 //liitytään välityspalvelimeen
 mq.on('connect', function(){
@@ -21,7 +21,7 @@ mq.on('connect', function(){
 
 //Määritellään tietokanta-API
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://eki:eki@cluster0.91fze.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://hupiukko1618:test@hupiukko1618.3fvpr.mongodb.net/?retryWrites=true&w=majority&appName=Hupiukko1618";
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
